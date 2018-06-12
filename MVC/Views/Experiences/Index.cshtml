@@ -1,0 +1,29 @@
+@model List<Experience>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exp in Model)
+        {
+            <tr>
+                <td>@exp.Title</td>
+                <td>@exp.Institution</td>
+                <td>
+                    @exp.Start.ToString("MM/yyyy") <i>through</i> 
+                    @(exp.End == null ? "current" : exp.End.Value.ToString("MM/yyyy"))
+                </td>
+                <td>@Html.ActionLink("Details", "Details", "Experiences", new {id = exp.ID}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Home", "Index", "Home") | 
+@Html.ActionLink("Education", "Index", "Education") | 
+@Html.ActionLink("Activities", "Index", "Activities")

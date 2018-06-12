@@ -1,0 +1,29 @@
+@model List<Education>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Degree</th>
+            <th>Institution</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var edu in Model)
+        {
+            <tr>
+                <td>@edu.Degree- @edu.Title</td>
+                <td>@edu.Institution</td>
+                <td>
+                    @edu.Start.ToString("MM/yyyy") <i>through</i> 
+                    @(edu.End == null ? "current" : edu.End.Value.ToString("MM/yyyy"))
+                </td>
+                <td>@Html.ActionLink("Details", "Details", "Education", new {id = edu.ID}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Home", "Index", "Home") | 
+@Html.ActionLink("Experiences", "Index", "Experiences") | 
+@Html.ActionLink("Activities", "Index", "Activities")

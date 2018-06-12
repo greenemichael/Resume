@@ -1,0 +1,31 @@
+@model List<Activity>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Institution</th>
+            <th>Group</th>
+            <th>Title</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var act in Model)
+        {
+            <tr>
+                <td>@act.Institution</td>
+                <td>@act.Group</td>
+                <td>@act.Title</td>
+                <td>
+                    @act.Start.ToString("MM/yyyy") <i>through</i> 
+                    @(act.End == null ? "current" : act.End.Value.ToString("MM/yyyy"))
+                </td>
+                <td>@Html.ActionLink("Details", "Details", "Activities", new {id = act.ID}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Home", "Index", "Home") | 
+@Html.ActionLink("Experiences", "Index", "Experiences") |
+@Html.ActionLink("Education", "Index", "Education")

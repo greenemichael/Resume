@@ -1,0 +1,32 @@
+@model Activity
+
+<h1>@Model.Institution: @Model.Group</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Projects</th>
+            <th>Important skills</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model.Tasks)
+        {
+            <tr>
+                <td>@task.Description</td>
+                <td>
+                    <ul>
+                        @foreach (var ts in task.TSlist)
+                        {
+                            <li>@ts.Skill.Name</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Home", "Index", "Home") | 
+@Html.ActionLink("Experiences", "Index", "Experiences") | 
+@Html.ActionLink("Education", "Index", "Education") | 
+@Html.ActionLink("Activities", "Index", "Activities")

@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model ResumeVM
+<div class="page-header" style="background: rgb(2, 2, 99)">
+        <h2 align="center" style="color: white">Michael Greene</h2>
+        <h4 align="right" style="color: white"><i>Cell:</i> (612) 807-6090</h4>
+        <h4 align="right" style="color: white"><i>Email:</i> Michael.Greene.27@gmail.com</h4>
+        <h4 style="color: white; padding-left: 15%">
+            [objective statement goes here]
+        </h4>
+</div>
+<div id="myResume" class="jumbotron">
+    <div id="Skills" class="container" style="box-shadow: 0 5px 20px gray">
+        <h2>Skills:</h2>
+        <dl style="columns: 2">
+            @foreach (var skill in Model.Skills)
+            {
+                <dd>@skill.Name</dd>
+            }
+        </dl>
+        <a class="btn btn-default" href='@Url.Action("Index", "Skills")'>Details</a>
+        <hr />
+    </div>
+    <div><hr /><hr /></div>
+    <div id="Experiences" class="container" style="box-shadow: 0 5px 20px gray">
+        <h2>Experiences: </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Duration</th>
+                    <th>Responsibilities</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var exp in Model.Experiences)
+                {
+                    <tr>
+                        <td>@exp.Title</td>
+                        <td>@exp.Institution</td>
+                        <td>
+                            @exp.Start.ToString("MM/yyyy") <i>through</i> 
+                            @(exp.End == null ? "current" : exp.End.Value.ToString("MM/yyyy"))
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var task in exp.Tasks)
+                                {
+                                    <li>@task.Description</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div><hr /><hr /></div>
+    <div id="Education" class="container" style="box-shadow: 0 5px 20px gray">
+        <h2>Education: </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Institution</th>
+                    <th>Degree</th>
+                    <th>Duration</th>
+                    <th>Projects</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var edu in Model.Education)
+                {
+                    <tr>
+                        <td>@edu.Institution</td>
+                        <td>@edu.Degree- @edu.Title</td>
+                        <td>
+                            @edu.Start.ToString("MM/yyyy") <i>through</i> 
+                            @(edu.End == null ? "current" : edu.End.Value.ToString("MM/yyyy"))
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var task in edu.Tasks)
+                                {
+                                    <li>@task.Description</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div><hr /><hr /></div>
+    <div id="Activities" class="container" style="box-shadow: 0 5px 20px gray">
+        <h2>Activities: </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Institution</th>
+                    <th>Group</th>
+                    <th>Title</th>
+                    <th>Duration</th>
+                    <th>Projects</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var act in Model.Activities)
+                {
+                    <tr>
+                        <td>@act.Institution</td>
+                        <td>@act.Group</td>
+                        <td>@act.Title</td>
+                        <td>
+                            @act.Start.ToString("MM/yyyy") <i>through</i> 
+                            @(act.End == null ? "current" : act.End.Value.ToString("MM/yyyy"))
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var task in act.Tasks)
+                                {
+                                    <li>@task.Description</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
