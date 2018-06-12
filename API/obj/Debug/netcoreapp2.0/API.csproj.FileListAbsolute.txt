@@ -9,3 +9,14 @@ C:\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
 C:\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
 C:\Resume\API\obj\Debug\netcoreapp2.0\API.dll
 C:\Resume\API\obj\Debug\netcoreapp2.0\API.pdb
+C:\GitResume\Resume\API\bin\Debug\netcoreapp2.0\API.deps.json
+C:\GitResume\Resume\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
+C:\GitResume\Resume\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
+C:\GitResume\Resume\API\bin\Debug\netcoreapp2.0\API.dll
+C:\GitResume\Resume\API\bin\Debug\netcoreapp2.0\API.pdb
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.dll
+C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.pdb

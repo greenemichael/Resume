@@ -9,3 +9,14 @@ C:\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.AssemblyInfoInputs.cache
 C:\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.AssemblyInfo.cs
 C:\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.dll
 C:\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.pdb
+C:\GitResume\Resume\MVC\bin\Debug\netcoreapp2.0\MVC.deps.json
+C:\GitResume\Resume\MVC\bin\Debug\netcoreapp2.0\MVC.runtimeconfig.json
+C:\GitResume\Resume\MVC\bin\Debug\netcoreapp2.0\MVC.runtimeconfig.dev.json
+C:\GitResume\Resume\MVC\bin\Debug\netcoreapp2.0\MVC.dll
+C:\GitResume\Resume\MVC\bin\Debug\netcoreapp2.0\MVC.pdb
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.csprojResolveAssemblyReference.cache
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.csproj.CoreCompileInputs.cache
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.AssemblyInfoInputs.cache
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.AssemblyInfo.cs
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.dll
+C:\GitResume\Resume\MVC\obj\Debug\netcoreapp2.0\MVC.pdb

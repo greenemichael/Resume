@@ -12541,11 +12541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Resume\\API\\API.csproj",
+      "projectUniqueName": "C:\\GitResume\\Resume\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Resume\\API\\API.csproj",
+      "projectPath": "C:\\GitResume\\Resume\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Dell Inspiron\\.nuget\\packages\\",
-      "outputPath": "C:\\Resume\\API\\obj\\",
+      "outputPath": "C:\\GitResume\\Resume\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
