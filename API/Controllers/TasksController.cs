@@ -18,7 +18,7 @@ namespace API.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetAllTasks")]
         public IEnumerable<Task> GetAllTasks()
         {
             return _context.Tasks
@@ -35,6 +35,40 @@ namespace API.Controllers
             .Include(task => task.TSlist)
             .ThenInclude(taskskill => taskskill.Skill)
             .FirstOrDefault(task => task.ID == id);
+        }
+
+        [HttpPost]
+        public IActionResult CreateTask(Task task)
+        {
+            _context.Tasks.Add(task);
+            _context.SaveChanges();
+            return CreatedAtRoute("GetAllTasks", task);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateTask(int id, Task task)
+        {
+            var dbtask = _context.Tasks.Find(id);
+            if (dbtask == null) { return NotFound(); }
+
+            dbtask.Description = task.Description;
+
+            _context.Tasks.Update(dbtask);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTask(int id)
+        {
+            var dbtask = _context.Tasks.Find(id);
+            if (dbtask == null) { return NotFound(); }
+
+            _context.Tasks.Remove(dbtask);
+            _context.SaveChanges();
+
+            return NoContent();
         }
     }
 }

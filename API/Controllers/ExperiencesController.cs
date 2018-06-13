@@ -19,7 +19,7 @@ namespace API.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetAllExperiences")]
         public IEnumerable<Experience> GetAllExperiences()
         {
             return _context.Experiences
@@ -31,7 +31,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public Experience GetExcerienceByID(int id)
+        public Experience GetExperienceByID(int id)
         {
             return _context.Experiences
             .Include(e => e.Tasks)
@@ -41,7 +41,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{title}")]
-        public IEnumerable<Experience> GetExcerienceByTitle(string title)
+        public IEnumerable<Experience> GetExperienceByTitle(string title)
         {
             return _context.Experiences
             .Include(e => e.Tasks)
@@ -49,6 +49,41 @@ namespace API.Controllers
             .ThenInclude(taskskill => taskskill.Skill)
             .Where(e => e.Title == title)
             .ToList();
+        }
+
+        [HttpPost]
+        public IActionResult CreateExperience(Experience experience)
+        {
+            _context.Experiences.Add(experience);
+            _context.SaveChanges();
+            return CreatedAtRoute("GetAllExperiences", experience);
+        }
+        
+        [HttpPut("{id}")]
+        public IActionResult UpdateExperience(int id, Experience experience)
+        {
+            var dbexperience = _context.Experiences.Find(id);
+            if (dbexperience == null) { return NotFound(); }
+
+            dbexperience.Institution = experience.Institution;
+            dbexperience.Title = experience.Title;
+            dbexperience.Start = experience.Start;
+            dbexperience.End = experience.End;
+
+            _context.Experiences.Update(dbexperience);
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteExperience(int id)
+        {
+            var dbexperience = _context.Experiences.Find(id);
+            if (dbexperience == null) { return NotFound(); }
+
+            _context.Experiences.Remove(dbexperience);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
