@@ -28,5 +28,19 @@ namespace MVC.Controllers
             var skills = JsonConvert.DeserializeObject<List<Skill>>(httpcontent);
             return View(skills);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> CreateSkill(Skill skill)
+        {
+            var strskill = new StringContent(JsonConvert.SerializeObject(skill));
+            
+            var httpresponse = await client.PostAsync(_apiConnection.Value.BaseURL + "Skills/Create/", strskill);
+            //var httpcontent = await httpresponse.Content.ReadAsStringAsync();
+            return RedirectToAction("Index");
+        }
     }
 }
