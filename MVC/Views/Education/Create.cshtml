@@ -1,0 +1,25 @@
+@model Education
+
+<h2>Create new Education experience</h2>
+@Html.ActionLink("Cancel", "Index", "Home")
+<hr />
+@using (Html.BeginForm("CreateEducation", "Education"))
+{
+    @Html.LabelFor(e => e.Institution)<br />
+    @Html.TextBoxFor(e => e.Institution)
+    <hr />
+
+    <h5><b>Degree</b></h5><br />
+    @Html.TextBoxFor(e => e.Title)
+    <br />
+
+    <select class="form-control" id="Degree" name="Degree">
+        <option>Select degree type</option> 
+        <option>Bachelor of Science</option> 
+        <option>Bachelor of Arts</option>
+        <option>Online Certificate</option>
+    </select>
+    <hr />
+    
+    <button type="submit">Create</button>
+}
