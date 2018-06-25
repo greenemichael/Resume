@@ -20,3 +20,14 @@ C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
 C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
 C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.dll
 C:\GitResume\Resume\API\obj\Debug\netcoreapp2.0\API.pdb
+C:\GitRepo\Resume\API\bin\Debug\netcoreapp2.0\API.deps.json
+C:\GitRepo\Resume\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
+C:\GitRepo\Resume\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
+C:\GitRepo\Resume\API\bin\Debug\netcoreapp2.0\API.dll
+C:\GitRepo\Resume\API\bin\Debug\netcoreapp2.0\API.pdb
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.dll
+C:\GitRepo\Resume\API\obj\Debug\netcoreapp2.0\API.pdb

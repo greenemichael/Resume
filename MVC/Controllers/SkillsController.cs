@@ -7,6 +7,7 @@ using MVC.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
+using System.Net.Http.Headers;
 
 namespace MVC.Controllers
 {
@@ -36,11 +37,27 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> CreateSkill(Skill skill)
         {
-            var strskill = new StringContent(JsonConvert.SerializeObject(skill));
+            var json = JsonConvert.SerializeObject(skill);
+            var strskill = new StringContent(json);
+
+            //without headers the PostAsync method wont call the right API action
+            strskill.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             
-            var httpresponse = await client.PostAsync(_apiConnection.Value.BaseURL + "Skills/Create/", strskill);
-            //var httpcontent = await httpresponse.Content.ReadAsStringAsync();
-            return RedirectToAction("Index");
+            var httpresponse = await client.PostAsync
+            (
+                _apiConnection.Value.BaseURL + "Skills/", strskill
+            );
+            var httpcontent = await httpresponse.Content.ReadAsStringAsync();
+            return RedirectToAction("Index", "Skills");
+        }
+
+        public async Task<IActionResult> DeleteSkill(Skill skill)
+        {
+            var httpresponse = await client.DeleteAsync
+            (
+                _apiConnection.Value.BaseURL + "Skills/" + skill.ID
+            );
+            return RedirectToAction("Index", "Skills");
         }
     }
 }

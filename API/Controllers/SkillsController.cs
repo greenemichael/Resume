@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using API.Models;
 using API.DataAccess;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -27,8 +28,8 @@ namespace API.Controllers
         }
 
         [HttpPost()]
-        public IActionResult CreateSkill(Skill skill)
-        {
+        public IActionResult CreateSkill([FromBody] Skill skill)
+        { // [FromBody] to indicate where to get the data for model binding
             _context.Skills.Add(skill);
             _context.SaveChanges();
             return CreatedAtRoute("GetAllSkills", new {id = skill.ID}, skill);

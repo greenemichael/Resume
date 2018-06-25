@@ -40,11 +40,11 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEducation(Education edu)
+        public IActionResult CreateEducation([FromBody] Education edu)
         {
             _context.Education.Add(edu);
             _context.SaveChanges();
-            return CreatedAtRoute("GetAll", edu);
+            return CreatedAtRoute("GetAllEducation", new {id = edu.ID}, edu);
         }
 
         [HttpPut("{id}")]

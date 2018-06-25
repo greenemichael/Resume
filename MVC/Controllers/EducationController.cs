@@ -7,6 +7,7 @@ using MVC.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
+using System.Net.Http.Headers;
 
 namespace MVC.Controllers
 {
@@ -35,6 +36,29 @@ namespace MVC.Controllers
             var httpcontent = await httpresponse.Content.ReadAsStringAsync();
             var education = JsonConvert.DeserializeObject<Education>(httpcontent);
             return View(education);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> CreateEducation(Education edu)
+        {
+            edu.Tasks = new List<MVC.Models.Task>();
+            var json = JsonConvert.SerializeObject(edu);
+            var strEdu = new StringContent(json);
+
+            // header is needed to call the proper API action
+            strEdu.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var httpresponse = await client.PostAsync
+            (
+                _apiConnection.Value.BaseURL + "Education/", strEdu
+            );
+
+            var httpcontent = await httpresponse.Content.ReadAsStringAsync();
+            return RedirectToAction("Index", "Education");
         }
     }
 }

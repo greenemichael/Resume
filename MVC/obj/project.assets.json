@@ -12541,11 +12541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitResume\\Resume\\MVC\\MVC.csproj",
+      "projectUniqueName": "C:\\GitRepo\\Resume\\MVC\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "C:\\GitResume\\Resume\\MVC\\MVC.csproj",
+      "projectPath": "C:\\GitRepo\\Resume\\MVC\\MVC.csproj",
       "packagesPath": "C:\\Users\\Dell Inspiron\\.nuget\\packages\\",
-      "outputPath": "C:\\GitResume\\Resume\\MVC\\obj\\",
+      "outputPath": "C:\\GitRepo\\Resume\\MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
