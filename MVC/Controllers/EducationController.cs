@@ -58,7 +58,26 @@ namespace MVC.Controllers
             );
 
             var httpcontent = await httpresponse.Content.ReadAsStringAsync();
-            return RedirectToAction("Index", "Education");
+            var dbEdu = JsonConvert.DeserializeObject<Education>(httpcontent);
+
+            return RedirectToAction("AddProjects", "Education", dbEdu, null);
+        }
+
+        public async Task<IActionResult> AddProjects(Education edu)
+        {
+            edu.Tasks = new List<MVC.Models.Task>();
+            
+            var httpresponse = await client.GetAsync(_apiConnection.Value.BaseURL + "Skills/");
+            var httpcontent = await httpresponse.Content.ReadAsStringAsync();
+            var skills = JsonConvert.DeserializeObject<List<Skill>>(httpcontent);
+            
+            return View
+            (
+                new EditExpVM() 
+                { 
+                    Experience = edu, Skills = skills
+                }
+            );
         }
     }
 }
