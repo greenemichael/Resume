@@ -1,0 +1,42 @@
+@model EditExpVM
+
+<h2>Add some Projects</h2>
+@Html.ActionLink("Cancel", "Index", "Home")
+<hr />
+@using (Html.BeginForm("AddProjects", "Education"))
+{
+    <h2>@Model.Experience.Institution: @Model.Experience.Title</h2>
+    <hr />
+    <h5><b>Project name</b></h5>
+    <input type="text" id="projName" placeholder="Project Name"></input><hr />
+    <h5><b>Project description</b></h5>
+    <textarea id="projDescription" placeholder="Project Description"></textarea><hr />
+    <button type="button" onclick="createTask">Add Project</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Relevant skills</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model.Experience.Tasks)
+            {
+                <tr>
+                    <td>@task.Description</td>
+                    <td>
+                        <ul>    
+                            @foreach (var ts in task.TSlist)
+                            {
+                                <li>@ts.Skill.Name</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    
+    <button type="submit">Create</button>
+}
